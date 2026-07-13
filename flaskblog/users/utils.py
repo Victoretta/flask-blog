@@ -24,7 +24,7 @@ def send_reset_email(user):
     token= user.get_reset_token()
     msg = Message(
     'Password Reset Request',
-    sender='victormeyer70@gmail.com',
+    sender='noreply@demo.com',
     recipients=[user.email]
 )
 
