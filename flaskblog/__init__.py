@@ -25,6 +25,10 @@ mail= Mail()
 def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(config_class)
+    print("MAIL_SERVER:", app.config["MAIL_SERVER"])
+    print("MAIL_PORT:", app.config["MAIL_PORT"])
+    print("MAIL_USERNAME:", app.config["MAIL_USERNAME"])
+    print("MAIL_PASSWORD SET:", app.config["MAIL_PASSWORD"] is not None)    
 
     db.init_app(app)
     bcrypt.init_app(app)
